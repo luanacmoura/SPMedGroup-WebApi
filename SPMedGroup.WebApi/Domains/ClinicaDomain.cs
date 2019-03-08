@@ -14,6 +14,11 @@ namespace SPMedGroup.WebApi.Domains
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ClinicaId { get; set; }
 
+        [Required (ErrorMessage = "Informe o CNPJ!")]
+        [Column(TypeName = "bigint")]
+        [MinLength(8, ErrorMessage = "O CNPJ deve conter no mínimo 8 caracteres!")]
+        public long CNPJ { get; set; }
+
         [Required (ErrorMessage = "Informe o nome!")]
         [MinLength(3, ErrorMessage = "O nome deve conter pelo menos 3 caracteres!")]
         [Column(TypeName = "varchar(250)")]

@@ -39,7 +39,7 @@ namespace SPMedGroup.WebApi.Domains
         [MinLength(6, ErrorMessage = "O endereço deve conter no mínimo 6 caracteres!")]
         public string Endereco { get; set; }
 
-        [Required (ErrorMessage = "Informe o CEP!")] //lembrar de por.IsUnique no Context
+        [Required (ErrorMessage = "Informe o CEP!")] 
         [Column(TypeName = "bigint")]
         [MinLength(8, ErrorMessage = "O CEP deve conter pelo menos 8 caracteres!")]
         public long CEP { get; set; }

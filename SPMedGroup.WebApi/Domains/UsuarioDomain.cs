@@ -12,7 +12,7 @@ namespace SPMedGroup.WebApi.Domains
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string UsuarioId { get; set; }
+        public int UsuarioId { get; set; }
 
         [Required(ErrorMessage = "Informe o email!")]
         [Column(TypeName = "varchar(250)")] //lembrar de por.IsUnique no Context

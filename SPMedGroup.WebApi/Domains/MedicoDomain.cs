@@ -12,6 +12,10 @@ namespace SPMedGroup.WebApi.Domains
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int MedicoId { get; set; }
+
+        [Required (ErrorMessage = "Informe o CRM do médico!")] //lembrar de por unique no context
+        [Column(TypeName = "char(32)")]
         public int CRM { get; set; }
 
         [Required (ErrorMessage = "Informe o nome!")]
