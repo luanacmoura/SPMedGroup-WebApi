@@ -39,30 +39,30 @@ namespace SPMedGroup_WebApi
                     //Definindo o tempo de expiração
                     ValidateLifetime = true,
                     //Forma de criptografia
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("D0Mlmccm14")),
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("D0Mlmccm14D0Mlmccm14D0Mlmccm14D0Mlmccm14")),
                     //Tempo de expiração do Token
                     ClockSkew = TimeSpan.FromMinutes(15),
                     //Nome da Issuer, de onde esta vindo
-                    ValidIssuer = "SPMedGroup-WebApi",
+                    ValidIssuer = "SPMedGroup.WebApi",
                     //Nome da Audience, de onde esta vindo
-                    ValidAudience = "SPMedGroup-WebApi"
+                    ValidAudience = "SPMedGroup.WebApi"
                 };
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-            public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
             {
-                if (env.IsDevelopment())
-                {
-                    app.UseDeveloperExceptionPage();
-                }
-
-                app.UseAuthentication();
-
-                app.UseCors("CorsPolicy");
-
-                app.UseMvc();
+                app.UseDeveloperExceptionPage();
             }
+
+            app.UseAuthentication();
+
+            app.UseCors("CorsPolicy");
+
+            app.UseMvc();
         }
     }
+}

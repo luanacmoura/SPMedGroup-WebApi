@@ -7,8 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SPMedGroup_WebApi;
 
-namespace SPMedGroup_WebApi
+namespace SPMedGroup.WebApi
 {
     public class Program
     {
