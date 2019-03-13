@@ -11,6 +11,7 @@ namespace SPMedGroup.WebApi.Domains
         public int? IdProntuarioPaciente { get; set; }
         public DateTime DataConsulta { get; set; }
         public string StatusConsulta { get; set; }
+        public string Descricao { get; set; }
 
         public ProntuarioPaciente IdProntuarioPacienteNavigation { get; set; }
         public Usuarios IdUsuarioMedicoNavigation { get; set; }

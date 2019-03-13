@@ -8,6 +8,14 @@ namespace SPMedGroup.WebApi.Repositories
 {
     class ConsultaRepository : IConsultaRepository
     {
+        public Consulta BuscarPorId(int id)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return ctx.Consulta.Find(id);
+            }
+        }
+
         public void Cadastrar(Consulta consulta)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
@@ -25,9 +33,13 @@ namespace SPMedGroup.WebApi.Repositories
             }
         }
 
-        public void Editar(int id, Consulta consulta)
+        public void Editar(Consulta consulta)
         {
-            throw new NotImplementedException();
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                ctx.Consulta.Update(consulta);
+                ctx.SaveChanges();
+            }
         }
 
         public List<Consulta> ListardoMedico()

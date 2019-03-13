@@ -7,9 +7,11 @@ namespace SPMedGroup.WebApi.Interfaces
     {
         void Cadastrar(Consulta consulta);
 
-        void Editar(int id, Consulta consulta);
+        void Editar( Consulta consulta);
 
         void CancelarConsulta(int id);
+
+        Consulta BuscarPorId(int id);
 
         List<Consulta> ListarTodas();
 

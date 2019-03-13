@@ -91,6 +91,9 @@ namespace SPMedGroup.WebApi.Domains
                     .IsUnicode(false)
                     .HasDefaultValueSql("('Agendada')");
 
+                entity.Property(e => e.Descricao).HasColumnName("Descricao");
+
+
                 entity.HasOne(d => d.IdProntuarioPacienteNavigation)
                     .WithMany(p => p.Consulta)
                     .HasForeignKey(d => d.IdProntuarioPaciente)
