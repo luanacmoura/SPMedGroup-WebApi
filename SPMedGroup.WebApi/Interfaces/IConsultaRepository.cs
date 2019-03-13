@@ -9,13 +9,13 @@ namespace SPMedGroup.WebApi.Interfaces
 
         void Editar( Consulta consulta);
 
-        void CancelarConsulta(int id);
+        void Cancelar(int id);
 
         Consulta BuscarPorId(int id);
 
         List<Consulta> ListarTodas();
 
-        List<Consulta> ListardoMedico();
+        List<Consulta> ListardoMedico(int id);
 
         List<Consulta> ListardoPaciente();
     }

@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SPMedGroup.WebApi.Domains;
+using System.Linq;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Http;
 
 namespace SPMedGroup.WebApi.Repositories
 {
@@ -25,16 +28,16 @@ namespace SPMedGroup.WebApi.Repositories
             }
         }
 
-        public void CancelarConsulta(int id)
+        public void Cancelar(int id)
         {
-            using (SpMedGroupContext ctx = new SpMedGroupContext())
-            {
-                
-            }
-        }
+            Consulta consulta = new Consulta();
+            consulta.Id = id;
+            consulta.DataConsulta = BuscarPorId(id).DataConsulta;
+            consulta.IdProntuarioPaciente = BuscarPorId(id).IdProntuarioPaciente;
+            consulta.IdUsuarioMedico = BuscarPorId(id).IdUsuarioMedico;
+            consulta.IdUsuarioPaciente = BuscarPorId(id).IdUsuarioPaciente;
+            consulta.StatusConsulta = "Cancelada";
 
-        public void Editar(Consulta consulta)
-        {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
                 ctx.Consulta.Update(consulta);
@@ -42,9 +45,51 @@ namespace SPMedGroup.WebApi.Repositories
             }
         }
 
-        public List<Consulta> ListardoMedico()
+        public void Editar(Consulta consulta)
         {
-            throw new NotImplementedException();
+            consulta.DataConsulta = BuscarPorId(consulta.Id).DataConsulta;
+            consulta.IdProntuarioPaciente = BuscarPorId(consulta.Id).IdProntuarioPaciente;
+            consulta.IdUsuarioMedico = BuscarPorId(consulta.Id).IdUsuarioMedico;
+            consulta.IdUsuarioPaciente = BuscarPorId(consulta.Id).IdUsuarioPaciente;
+            consulta.StatusConsulta = "Realizada";
+
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                ctx.Consulta.Update(consulta);
+                ctx.SaveChanges();
+            }
+        }
+
+        public List<Consulta> ListardoMedico(int usuarioid)
+        {
+            List<Consulta> listadomedico = new List<Consulta>();
+         
+
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                int contador = ctx.Consulta.Count();
+                int i = 1;
+
+                while (i <= contador)
+                {
+                    Consulta consulta = new Consulta();
+                    consulta = ctx.Consulta.Find(i);
+                    if (consulta != null)
+                    {
+                        if (consulta.IdUsuarioMedico == usuarioid)
+                        {
+                            listadomedico.Add(consulta);
+                        }
+                    }
+                    i++;
+                }
+
+                if (listadomedico.Count > 0)
+                {
+                    return listadomedico;
+                }
+                return null;
+            }
         }
 
         public List<Consulta> ListardoPaciente()
@@ -54,7 +99,10 @@ namespace SPMedGroup.WebApi.Repositories
 
         public List<Consulta> ListarTodas()
         {
-            throw new NotImplementedException();
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return (ctx.Consulta.ToList());
+            }
         }
     }
 }

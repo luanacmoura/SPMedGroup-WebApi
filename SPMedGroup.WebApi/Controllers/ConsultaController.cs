@@ -4,6 +4,8 @@ using SPMedGroup.WebApi.Domains;
 using SPMedGroup.WebApi.Interfaces;
 using SPMedGroup.WebApi.Repositories;
 using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 
 namespace SPMedGroup.WebApi.Controllers
 {
@@ -45,14 +47,57 @@ namespace SPMedGroup.WebApi.Controllers
                     return NotFound("Não é possível editar uma consulta não existente!");
                 }
 
-                consulta.DataConsulta = ConsultaRepository.BuscarPorId(consulta.Id).DataConsulta;
-                consulta.IdProntuarioPaciente = ConsultaRepository.BuscarPorId(consulta.Id).IdProntuarioPaciente;
-                consulta.IdUsuarioMedico = ConsultaRepository.BuscarPorId(consulta.Id).IdUsuarioMedico;
-                consulta.IdUsuarioPaciente = ConsultaRepository.BuscarPorId(consulta.Id).IdUsuarioPaciente;
-                consulta.StatusConsulta = "Realizada";
-
                 ConsultaRepository.Editar(consulta);
                 return Ok("Consulta editada com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Algo deu errado :/");
+            }
+        }
+
+        [Authorize(Roles = "1")] //O admnistrador pode cancelar uma consulta!
+        [HttpPut("{Cancelar}/{id}")]
+        public IActionResult CancelarConsulta(int id)
+        {
+            try
+            {
+                if (ConsultaRepository.BuscarPorId(id) == null)
+                {
+                    return NotFound("Não é possível editar uma consulta não existente!");
+                }
+
+                ConsultaRepository.Cancelar(id);
+                return Ok("Consulta cancelada com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Algo deu errado :/");
+            }
+        }
+
+        [Authorize(Roles = "1")] //Somente o administrador pode listar todas as consultas!
+        [HttpGet("{ListarTodas}")]
+        public IActionResult ListarTodas ()
+        {
+            try
+            {
+                return Ok(ConsultaRepository.ListarTodas());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Algo deu errado :/");
+            }
+        }
+
+        [Authorize(Roles = "2")] //Somente o médico pode listar as próprias consultas!
+        [HttpGet("{ListardoMedico}")]
+        public IActionResult ListardoMedico()
+        {
+            try
+            {
+                int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                return Ok(ConsultaRepository.ListardoMedico(usuarioid));
             }
             catch (Exception ex)
             {
