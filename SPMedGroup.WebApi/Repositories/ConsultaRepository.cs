@@ -92,9 +92,36 @@ namespace SPMedGroup.WebApi.Repositories
             }
         }
 
-        public List<Consulta> ListardoPaciente()
+        public List<Consulta> ListardoPaciente(int usuarioid)
         {
-            throw new NotImplementedException();
+            List<Consulta> listadopaciente = new List<Consulta>();
+
+
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                int contador = ctx.Consulta.Count();
+                int i = 1;
+
+                while (i <= contador)
+                {
+                    Consulta consulta = new Consulta();
+                    consulta = ctx.Consulta.Find(i);
+                    if (consulta != null)
+                    {
+                        if (consulta.IdUsuarioMedico == usuarioid)
+                        {
+                            listadopaciente.Add(consulta);
+                        }
+                    }
+                    i++;
+                }
+
+                if (listadopaciente.Count > 0)
+                {
+                    return listadopaciente;
+                }
+                return null;
+            }
         }
 
         public List<Consulta> ListarTodas()

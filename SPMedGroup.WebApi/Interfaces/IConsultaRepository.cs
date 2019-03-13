@@ -17,6 +17,6 @@ namespace SPMedGroup.WebApi.Interfaces
 
         List<Consulta> ListardoMedico(int id);
 
-        List<Consulta> ListardoPaciente();
+        List<Consulta> ListardoPaciente(int id);
     }
 }

@@ -104,5 +104,20 @@ namespace SPMedGroup.WebApi.Controllers
                 return BadRequest("Algo deu errado :/");
             }
         }
+
+        [Authorize(Roles = "3")] //Somente o paciente pode listar as próprias consultas!
+        [HttpGet("{ListardoPaciente}")]
+        public IActionResult ListardoPaciente()
+        {
+            try
+            {
+                int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+                return Ok(ConsultaRepository.ListardoPaciente(usuarioid));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Algo deu errado :/");
+            }
+        }
     }
 }

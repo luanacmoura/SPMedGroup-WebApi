@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "0a8cf037-aeaf-483e-9793-21678ea5afc1",
+		"name": "SPMedGroup.WebApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login como Administrador",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"admin@admin.com\",\n\t\"senha\":\"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login como Médico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"helena.souza@spmedicalgroup.com.br\",\n\t\"senha\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login como Paciente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"ligia@gmail.com\",\n\t\"senha\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjM5OTQxMywiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.2MdzabV142NY2mcKBNh4zjM4NO8_xanQt4rzcVOy36s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Email\":\"testepraversedeixacadastrarsendoadmin@lala.com\",\n\t\"Senha\": \"lalala\",\n\t\"IdTipoUsuarios\":\"2\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/usuario/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"usuario",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Endereço do Médico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":55565567\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/enderecosmedicos/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"enderecosmedicos",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Endereço do Paciente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":55565567\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/enderecosmedicos/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"enderecosmedicos",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Consulta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"IdUsuarioPaciente\":\"10\",\n\t\"IdUsuarioMedico\":\"3\",\n\t\"IdProntuarioPaciente\":\"9\",\n\t\"DataConsulta\":\"20/1/2019 16:00\",\n\t\"StatusConsulta\":\"Aguardando\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/consulta/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"consulta",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Consulta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":6,\n\t\"Descricao\":\"Testando at home\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/consulta/editar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"consulta",
+						"editar"
+					]
+				},
+				"description": "Um usuário do tipo médico pode editar a consulta, acrescentando uma descrição."
+			},
+			"response": []
+		},
+		{
+			"name": "Cancelar Consulta",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/consulta/editar/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"consulta",
+						"editar",
+						"6"
+					]
+				},
+				"description": "Um usuário do tipo administrador pode cancelar uma consulta."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Todas as Consultas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/consulta/listartodas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"consulta",
+						"listartodas"
+					]
+				},
+				"description": "Um usuário do tipo administrador pode listar todas as consultas."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Consultas do Médico",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/consulta/listardomedico",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"consulta",
+						"listardomedico"
+					]
+				},
+				"description": "Lista todas as consultas do médico que está logado.\n(Somente um usuário do tipo médico pode efetuar essa ação.)"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Consultas do Paciente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/consulta/listardopaciente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"consulta",
+						"listardopaciente"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
