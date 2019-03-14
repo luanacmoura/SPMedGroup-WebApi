@@ -136,7 +136,8 @@
 						"usuario",
 						"cadastrar"
 					]
-				}
+				},
+				"description": "Somente um usuário do tipo administrador pode cadastrar um usuário!"
 			},
 			"response": []
 		},
@@ -552,7 +553,8 @@
 						"consulta",
 						"listardopaciente"
 					]
-				}
+				},
+				"description": "É preciso estar logado com um paciente para executar esta função."
 			},
 			"response": []
 		},
