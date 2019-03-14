@@ -8,12 +8,29 @@ namespace SPMedGroup.WebApi.Repositories
 {
     public class MedicosRepository : IMedicosRepository
     {
-        public void Cadastrar(Medicos medico)
+        public Medicos Cadastrar(Medicos medico)
         {
+            Usuarios usuario = new Usuarios();
+
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                ctx.Medicos.Add(medico);
-                ctx.SaveChanges();
+                usuario = ctx.Usuarios.Find(medico.IdUsuario);
+
+                if (usuario.IdTipoUsuarios != 2)
+                {
+                    return null;
+                }
+
+                if (ctx.ProntuarioPaciente.Find(medico.IdUsuario) != null) //Pra que ele não possa cadastrar um paciente num usuário que já exista!
+                {
+                    return null;
+                }
+                else
+                {
+                    ctx.Medicos.Add(medico);
+                    ctx.SaveChanges();
+                    return medico;
+                }
             }
         }
     }

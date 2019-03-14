@@ -22,12 +22,16 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize (Roles = "1")] //Só o administrador pode cadastrar um médico!
-        [HttpPost("{Cadastrar}")]
+        [HttpPost("Cadastrar")]
         public IActionResult Cadastrar (Medicos medico)
         {
             try
             {
-                MedicosRepository.Cadastrar(medico);
+                if (MedicosRepository.Cadastrar(medico)==null)
+                {
+                    return BadRequest("Não é possível cadastrar um usuário do tipo admin/paciente num médico!");
+                }
+
                 return Ok("Médico cadastrado com sucesso!");
             }
             catch (Exception ex)

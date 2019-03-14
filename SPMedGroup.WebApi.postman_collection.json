@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0a8cf037-aeaf-483e-9793-21678ea5afc1",
+		"_postman_id": "c5294c42-a30f-4159-962e-3d43078b35eb",
 		"name": "SPMedGroup.WebApi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -19,7 +19,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"email\":\"admin@admin.com\",\n\t\"senha\":\"admin\"\n}"
+					"raw": "{\n\t\"email\":\"segundoadmin@admin.com\",\n\t\"senha\":\"teste\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/login",
@@ -106,7 +106,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjM5OTQxMywiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.2MdzabV142NY2mcKBNh4zjM4NO8_xanQt4rzcVOy36s",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU2MjU2OCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.FISE7hKwoiYY8P97144lXz7QXbA9KmebvD8IDNNxLL0",
 							"type": "string"
 						}
 					]
@@ -122,7 +122,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"Email\":\"testepraversedeixacadastrarsendoadmin@lala.com\",\n\t\"Senha\": \"lalala\",\n\t\"IdTipoUsuarios\":\"2\"\n}"
+					"raw": "{\n\t\"Email\":\"segundoadmin@admin.com\",\n\t\"Senha\": \"teste\",\n\t\"IdTipoUsuarios\":\"1\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/usuario/cadastrar",
@@ -143,6 +143,16 @@
 		{
 			"name": "Cadastrar Endereço do Médico",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjMyMDUsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.gkB26qQC8zXp9EffAkD1kN3_uQghmGtSlz1xiXbM114",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -154,7 +164,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":55565567\n}"
+					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua dos testes, 530\",\n\t\"CEP\":\"53565377\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/enderecosmedicos/cadastrar",
@@ -168,13 +178,24 @@
 						"enderecosmedicos",
 						"cadastrar"
 					]
-				}
+				},
+				"description": "Somente um usuário do tipo administrador pode cadastrar um endereço."
 			},
 			"response": []
 		},
 		{
 			"name": "Cadastrar Endereço do Paciente",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjMyMDUsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.gkB26qQC8zXp9EffAkD1kN3_uQghmGtSlz1xiXbM114",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -186,10 +207,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":55565567\n}"
+					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":55365567\n}"
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/enderecosmedicos/cadastrar",
+					"raw": "http://localhost:5000/api/enderecospacientes/cadastrar",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -197,16 +218,27 @@
 					"port": "5000",
 					"path": [
 						"api",
-						"enderecosmedicos",
+						"enderecospacientes",
 						"cadastrar"
 					]
-				}
+				},
+				"description": "Somente um usuário do tipo administrador pode cadastrar um endereço!"
 			},
 			"response": []
 		},
 		{
-			"name": "Cadastrar Consulta",
+			"name": "Cadastrar Médico",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjcyMzgsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.Avr7fU0gG3PkW_RDo_vq4BX1S6Ysdmmb1ssog5pUO5M",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -218,7 +250,179 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"IdUsuarioPaciente\":\"10\",\n\t\"IdUsuarioMedico\":\"3\",\n\t\"IdProntuarioPaciente\":\"9\",\n\t\"DataConsulta\":\"20/1/2019 16:00\",\n\t\"StatusConsulta\":\"Aguardando\"\n}\n"
+					"raw": "{\n\t\"Crm\":\"56857\",\n\t\"Nome\":\"Ligia santos\",\n\t\"Telefone\":\"66567865\",\n\t\"IdAreaClinica\":\"4\",\n\t\"IdEndereco\":\"3\",\n\t\"IdUsuario\":\"4\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/medicos/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"medicos",
+						"cadastrar"
+					]
+				},
+				"description": "Para cadastrar um médico, primeiro é necessário cadastrar um usuário! Somente um usuário do tipo administrador pode cadastrar um usuário e, posteriormente, um médico!"
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Paciente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1Njg5ODIsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.7K0UVIqxOXrHmgAOgvw3k1CxqWaCObWX1kyApXIOsdc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Nome\": \"Testedenovo\",\n\t\"Rg\":\"567876338\",\n\t\"Cpf\":\"65472248787\",\n\t\"DataNasc\":\"1967/03/02\",\n\t\"Telefone\":\"75678748\",\n\t\"IdEndereco\":\"7\",\n\t\"IdUsuario\":\"7\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/prontuariopaciente/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"prontuariopaciente",
+						"cadastrar"
+					]
+				},
+				"description": "Para cadastrar um paciente, primeiro é necessário cadastrar um usuário! Somente um usuário do tipo administrador pode cadastrar um usuário e, posteriormente, um paciente!"
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Área Clínica",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjcyMzgsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.Avr7fU0gG3PkW_RDo_vq4BX1S6Ysdmmb1ssog5pUO5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Nome\":\"Psiquiatria Asiatica\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/areaclinica/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"areaclinica",
+						"cadastrar"
+					]
+				},
+				"description": "Somente um usuário do tipo administrador pode cadastrar uma área clínica."
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Clínica",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjcyMzgsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.Avr7fU0gG3PkW_RDo_vq4BX1S6Ysdmmb1ssog5pUO5M",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Cnpj\": \"4545456543456\",\n\t\"Nome\": \"Clínica Antonieta\",\n\t\"RazaoSocial\":\"SP MedClass\",\n\t\"Endereco\":\"Rua das margaridas, 359 - Mooca, São Paulo SP\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/clinica/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clinica",
+						"cadastrar"
+					]
+				},
+				"description": "Somente um usuário do tipo administrador pode cadastrar uma clínica!"
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Consulta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjMyMDUsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.gkB26qQC8zXp9EffAkD1kN3_uQghmGtSlz1xiXbM114",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"IdUsuarioPaciente\":\"10\",\n\t\"IdUsuarioMedico\":\"3\",\n\t\"IdProntuarioPaciente\":\"7\",\n\t\"DataConsulta\":\"2019/11/02 20:00\"\n}\n"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/consulta/cadastrar",
@@ -232,13 +436,24 @@
 						"consulta",
 						"cadastrar"
 					]
-				}
+				},
+				"description": "Somente um usuário do tipo administrador pode cadastrar uma consulta!"
 			},
 			"response": []
 		},
 		{
 			"name": "Editar Consulta",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzIiwiZW1haWwiOiJoZWxlbmEuc291emFAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsImV4cCI6MTU1MjU2MzIzMSwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.gR8YlIFIjjU1Eyv3YXqhiDTFJl8ZNzYuLjg9WfBdae4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -250,7 +465,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":6,\n\t\"Descricao\":\"Testando at home\"\n}"
+					"raw": "{\n\t\"id\":10,\n\t\"Descricao\":\"Testando token\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/consulta/editar",
@@ -272,6 +487,16 @@
 		{
 			"name": "Cancelar Consulta",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjI5MzMsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.5FdxwnyzRlYFvtykjAANmUnNhBylAw-rrxy_nMsJELQ",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"body": {
@@ -279,7 +504,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/consulta/editar/6",
+					"raw": "http://localhost:5000/api/consulta/cancelar/7",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -288,17 +513,27 @@
 					"path": [
 						"api",
 						"consulta",
-						"editar",
-						"6"
+						"cancelar",
+						"7"
 					]
 				},
-				"description": "Um usuário do tipo administrador pode cancelar uma consulta."
+				"description": "Somente um usuário do tipo administrador pode cancelar uma consulta."
 			},
 			"response": []
 		},
 		{
-			"name": "Listar Todas as Consultas",
+			"name": "Listar Consultas do Paciente",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0IiwiZW1haWwiOiJsaWdpYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwiZXhwIjoxNTUyNTY1NTgyLCJpc3MiOiJTUE1lZEdyb3VwLldlYkFwaSIsImF1ZCI6IlNQTWVkR3JvdXAuV2ViQXBpIn0.q9pzX2Wx9t3z4uBMTiEuXs3BruQk3fwtA-2aDAON9zU",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -306,7 +541,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/consulta/listartodas",
+					"raw": "http://localhost:5000/api/consulta/listardopaciente",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -315,16 +550,25 @@
 					"path": [
 						"api",
 						"consulta",
-						"listartodas"
+						"listardopaciente"
 					]
-				},
-				"description": "Um usuário do tipo administrador pode listar todas as consultas."
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Listar Consultas do Médico",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzIiwiZW1haWwiOiJoZWxlbmEuc291emFAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsImV4cCI6MTU1MjU2NjI3OCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.KEBoyDkIXS3DUktFDTQ_L3qkbdOvFhuAPOj9ql_OmLs",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -349,8 +593,21 @@
 			"response": []
 		},
 		{
-			"name": "Listar Consultas do Paciente",
+			"name": "Listar Todas as Consultas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjY0NDAsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.vuoPdBdzMGvKf3v2pFGHMUFLgKRWGgsv4ccM6-loqD4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -358,7 +615,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/consulta/listardopaciente",
+					"raw": "http://localhost:5000/api/consulta/listartodas",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -367,11 +624,34 @@
 					"path": [
 						"api",
 						"consulta",
-						"listardopaciente"
+						"listartodas"
 					]
-				}
+				},
+				"description": "Um usuário do tipo administrador pode listar todas as consultas."
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fa0e4af6-28e3-4ad8-b142-071a0f3b1f19",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "df0b96f4-5249-41fc-a526-6fb42575bb00",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

@@ -108,7 +108,7 @@ namespace SPMedGroup.WebApi.Repositories
                     consulta = ctx.Consulta.Find(i);
                     if (consulta != null)
                     {
-                        if (consulta.IdUsuarioMedico == usuarioid)
+                        if (consulta.IdUsuarioPaciente == usuarioid)
                         {
                             listadopaciente.Add(consulta);
                         }

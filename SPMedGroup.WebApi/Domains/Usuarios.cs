@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SPMedGroup.WebApi.Domains
 {
@@ -14,8 +15,16 @@ namespace SPMedGroup.WebApi.Domains
         }
 
         public int Id { get; set; }
+
+        [Required (ErrorMessage = "Insira o email!", AllowEmptyStrings = false)]
+        [EmailAddress(ErrorMessage = "Email inválido.")]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Insira a senha!", AllowEmptyStrings = false)]
+        [StringLength(10, MinimumLength = 6, ErrorMessage = "A senha deve ter entre 6 e 10 caracteres!")]
         public string Senha { get; set; }
+
+        [Required(ErrorMessage = "O tipo de usuário é obrigatório.")]
         public int IdTipoUsuarios { get; set; }
 
         public TipoUsuarios IdTipoUsuariosNavigation { get; set; }

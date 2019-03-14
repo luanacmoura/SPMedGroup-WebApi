@@ -20,7 +20,7 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize (Roles = "1")] //Só o administrador pode cadastrar uma clínica
-        [HttpPost("{Cadastrar}")]
+        [HttpPost("Cadastrar")]
         public IActionResult Cadastrar(Clinica clinica)
         {
             try

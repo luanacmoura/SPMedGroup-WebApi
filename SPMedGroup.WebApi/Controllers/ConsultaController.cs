@@ -22,7 +22,7 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize(Roles = "1")] //Somente o administrador pode cadastrar uma consulta
-        [HttpPost("{Cadastrar}")]
+        [HttpPost("Cadastrar")]
         public IActionResult CadastrarConsulta(Consulta consulta)
         {
             try
@@ -37,7 +37,7 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize(Roles = "2")] //O médico pode editar a consulta pra adicionar uma descrição, e qnd isso acontecer o status da consulta vai pra realizada!
-        [HttpPut("{Editar}")]
+        [HttpPut("Editar")]
         public IActionResult EditarConsulta(Consulta consulta)
         {
             try
@@ -57,7 +57,7 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize(Roles = "1")] //O admnistrador pode cancelar uma consulta!
-        [HttpPut("{Cancelar}/{id}")]
+        [HttpPut("Cancelar/{id}")]
         public IActionResult CancelarConsulta(int id)
         {
             try
@@ -77,8 +77,8 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize(Roles = "1")] //Somente o administrador pode listar todas as consultas!
-        [HttpGet("{ListarTodas}")]
-        public IActionResult ListarTodas ()
+        [HttpGet("ListarTodas")]
+        public IActionResult ListarTodas()
         {
             try
             {
@@ -91,7 +91,7 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize(Roles = "2")] //Somente o médico pode listar as próprias consultas!
-        [HttpGet("{ListardoMedico}")]
+        [HttpGet("ListardoMedico")]
         public IActionResult ListardoMedico()
         {
             try
@@ -106,12 +106,13 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize(Roles = "3")] //Somente o paciente pode listar as próprias consultas!
-        [HttpGet("{ListardoPaciente}")]
+        [HttpGet("ListardoPaciente")]
         public IActionResult ListardoPaciente()
         {
             try
             {
                 int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
                 return Ok(ConsultaRepository.ListardoPaciente(usuarioid));
             }
             catch (Exception ex)
