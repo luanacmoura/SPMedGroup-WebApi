@@ -13,6 +13,7 @@ namespace SPMedGroup.WebApi.Repositories
             {
                 Usuarios Usuario = new Usuarios();
                 Usuario = ctx.Usuarios.FirstOrDefault(x => x.Email == email && x.Senha == senha);
+                // busca o nome do tipo de usuário na tabela correspondente
                 if (Usuario != null)
                 {
                     return Usuario;
