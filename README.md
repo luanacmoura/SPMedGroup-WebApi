@@ -1,19 +1,29 @@
 # SPMedGroup.WebApi
-Api desenvolvida para fins didáticos para a empresa ficticia SP Medical Group, com abordagem Database First.
+Api desenvolvida para fins didáticos para a empresa fictícia SP Medical Group, desenvolvido na linguagem C# com abordagem Database First. A proposta desta api, a princípio, é facilitar atividades costumeiras como agendar uma consulta ou mesmo visualizar consultas.
 
-## Getting Started
+## Começando
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Essas instruções tem o propósito de ajudá-lo a ter uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
 
-### Prerequisites
+### Preparando o ambiente de trabalho
 
-What things you need to install the software and how to install them
+Existem alguns pré-requisitos para que seja possível testar esta aplicação.
 
-```
-Give examples
-```
+### Programas
 
-### Installing
+- SQL Server Management Studio 2017
+- Visual Studio 2017
+- Postman
+
+### Bibliotecas
+
+- [Microsoft.EntityFrameworkCore (2.1.1)] (https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/2.1.1/)
+- Microsoft.EntityFrameworkCore.SqlServer (2.1.1) 
+- Microsoft.EntityFrameworkCore.Design (2.1.1)
+- Microsoft.EntityFrameworkCore.Tools (2.1.1)
+- System.IdentityModel.Tokens.Jwt
+- Microsoft.AspNetCore.Authentication.JwtBearer
+- Swashbuckle.AspNetCore (4.0.1)
 
 A step by step series of examples that tell you how to get a development env running
 
