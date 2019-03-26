@@ -1,5 +1,5 @@
 # SPMedGroup.WebApi
-Api desenvolvida para fins didáticos para a empresa fictícia SP Medical Group, desenvolvido na linguagem C# com abordagem Database First. A proposta desta api, a princípio, é facilitar atividades costumeiras como agendar uma consulta ou mesmo visualizar consultas.
+API desenvolvida para fins didáticos para a empresa fictícia SP Medical Group, desenvolvido na linguagem C# com abordagem Database First. A proposta desta API, a princípio, é facilitar atividades costumeiras como agendar uma consulta ou mesmo visualizar consultas.
 
 ## Começando
 
@@ -7,23 +7,26 @@ Essas instruções tem o propósito de ajudá-lo a ter uma cópia do projeto em 
 
 ### Preparando o ambiente de trabalho
 
-Existem alguns pré-requisitos para que seja possível testar esta aplicação.
-
+Para baixar esta API, siga os seguintes passos:
+[sla](https://drive.google.com/file/d/1Zz6ItuTGNVCmiuu4XFGsVw3S0GNt-1fR/view?usp=sharing)
 ### Programas
-
-- SQL Server Management Studio 2017
-- Visual Studio 2017
-- Postman
+Caso não possua os seguintes programas na sua máquina, será necessário baixá-los.
+- [SQL Server Management Studio 2017](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
+- [Visual Studio 2017](https://visualstudio.microsoft.com/pt-br/vs/community/)
+- [Postman](https://www.getpostman.com/downloads/)
 
 ### Bibliotecas
+As bibliotecas utilizadas nesta API podem ser facilmente instaladas pelo [NuGet](https://www.nuget.org/), entretanto, para facilitar, recomendo a instalação das bibliotecas diretamente do Visual Studio.
+Como fazer:
+1. Primeiro
+- [Microsoft.EntityFrameworkCore (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/2.1.1/)
+- [Microsoft.EntityFrameworkCore.SqlServer (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/2.1.1) 
+- [Microsoft.EntityFrameworkCore.Design (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/2.1.1)
+- [Microsoft.EntityFrameworkCore.Tools (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/2.1.1)
+- [System.IdentityModel.Tokens.Jwt (5.4.0)](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt/)
+- [Microsoft.AspNetCore.Authentication.JwtBearer (2.2.0)](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer/2.2.0)
+- [Swashbuckle.AspNetCore (4.0.1)](https://www.nuget.org/packages/Swashbuckle.AspNetCore/4.0.1)
 
-- [Microsoft.EntityFrameworkCore (2.1.1)] (https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/2.1.1/)
-- Microsoft.EntityFrameworkCore.SqlServer (2.1.1) 
-- Microsoft.EntityFrameworkCore.Design (2.1.1)
-- Microsoft.EntityFrameworkCore.Tools (2.1.1)
-- System.IdentityModel.Tokens.Jwt
-- Microsoft.AspNetCore.Authentication.JwtBearer
-- Swashbuckle.AspNetCore (4.0.1)
 
 A step by step series of examples that tell you how to get a development env running
 
