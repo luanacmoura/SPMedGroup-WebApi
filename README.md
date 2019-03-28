@@ -7,8 +7,7 @@ Essas instruções tem o propósito de ajudá-lo a ter uma cópia do projeto em 
 
 ### Preparando o ambiente de trabalho
 
-Para baixar esta API, siga os seguintes passos:
-[sla](https://drive.google.com/file/d/1Zz6ItuTGNVCmiuu4XFGsVw3S0GNt-1fR/view?usp=sharing)
+Para baixar esta API, siga [estes passos](https://drive.google.com/file/d/1Zz6ItuTGNVCmiuu4XFGsVw3S0GNt-1fR/view?usp=sharing).
 ### Programas
 Caso não possua os seguintes programas na sua máquina, será necessário baixá-los.
 - [SQL Server Management Studio 2017](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
@@ -18,7 +17,10 @@ Caso não possua os seguintes programas na sua máquina, será necessário baix�
 ### Bibliotecas
 As bibliotecas utilizadas nesta API podem ser facilmente instaladas pelo [NuGet](https://www.nuget.org/), entretanto, para facilitar, recomendo a instalação das bibliotecas diretamente do Visual Studio.
 Como fazer:
-1. Primeiro
+1. Abra o projeto no Visual Studio.
+2. No canto superior direito, clique com o botão direito em ["dependências"](https://drive.google.com/open?id=1BkFmi4ZvFoau0AJB5Q14VKygiuPS-cMF) e em seguida clique em "gerenciar pacotes do nuget".
+3. Na aba "procurar", pesquise e instale as seguintes bibliotecas:
+P.s: Atente-se para as versões entre parênteses.
 - [Microsoft.EntityFrameworkCore (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/2.1.1/)
 - [Microsoft.EntityFrameworkCore.SqlServer (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/2.1.1) 
 - [Microsoft.EntityFrameworkCore.Design (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/2.1.1)
@@ -28,15 +30,15 @@ Como fazer:
 - [Swashbuckle.AspNetCore (4.0.1)](https://www.nuget.org/packages/Swashbuckle.AspNetCore/4.0.1)
 
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+###Preparando o Postman
+Para testar esta aplicação estaremos usando o Postman, as requisições já estão prontas, basta importá-las. Para fazer isso:
+1. 
 
 ```
 Give the example
-```
-
-And repeat
+``` 
+ 
+ nd repeat
 
 ```
 until finished
