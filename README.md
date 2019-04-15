@@ -1,6 +1,6 @@
 # SPMedGroup.WebApi
 Api desenvolvida para fins didáticos para a empresa ficticia SP Medical Group, com abordagem Database First.
-
+Read.me em desenvolvimento.
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
