@@ -47,8 +47,10 @@ namespace SPMedGroup.WebApi.Controllers
                     {
                         new Claim(JwtRegisteredClaimNames.Jti, usuario.Id.ToString()),
                         new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
-                        new Claim(ClaimTypes.Role, usuario.IdTipoUsuarios.ToString())
+                        new Claim(ClaimTypes.Role, usuario.IdTipoUsuarios.ToString()),
+                        new Claim("Role", usuario.IdTipoUsuarios.ToString())
                     };
+                               
 
                     //Chave para acesso ao token
                     var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("D0Mlmccm14D0Mlmccm14D0Mlmccm14D0Mlmccm14"));

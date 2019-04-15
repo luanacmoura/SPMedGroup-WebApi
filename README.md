@@ -1,44 +1,29 @@
 # SPMedGroup.WebApi
-API desenvolvida para fins didáticos para a empresa fictícia SP Medical Group, desenvolvido na linguagem C# com abordagem Database First. A proposta desta API, a princípio, é facilitar atividades costumeiras como agendar uma consulta ou mesmo visualizar consultas.
+Api desenvolvida para fins didáticos para a empresa ficticia SP Medical Group, com abordagem Database First.
 
-## Começando
+## Getting Started
 
-Essas instruções tem o propósito de ajudá-lo a ter uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Preparando o ambiente de trabalho
+### Prerequisites
 
-Para baixar esta API, siga [estes passos](https://drive.google.com/file/d/1Zz6ItuTGNVCmiuu4XFGsVw3S0GNt-1fR/view?usp=sharing).
-### Programas
-Caso não possua os seguintes programas na sua máquina, será necessário baixá-los.
-- [SQL Server Management Studio 2017](https://www.microsoft.com/pt-br/sql-server/sql-server-downloads)
-- [Visual Studio 2017](https://visualstudio.microsoft.com/pt-br/vs/community/)
-- [Postman](https://www.getpostman.com/downloads/)
+What things you need to install the software and how to install them
 
-### Bibliotecas
-As bibliotecas utilizadas nesta API podem ser facilmente instaladas pelo [NuGet](https://www.nuget.org/), entretanto, para facilitar, recomendo a instalação das bibliotecas diretamente do Visual Studio.
-Como fazer:
-1. Abra o projeto no Visual Studio.
-2. No canto superior direito, clique com o botão direito em ["dependências"](https://drive.google.com/open?id=1BkFmi4ZvFoau0AJB5Q14VKygiuPS-cMF) e em seguida clique em "gerenciar pacotes do nuget".
-3. Na aba "procurar", pesquise e instale as seguintes bibliotecas:
-P.s: Atente-se para as versões entre parênteses.
-- [Microsoft.EntityFrameworkCore (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/2.1.1/)
-- [Microsoft.EntityFrameworkCore.SqlServer (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/2.1.1) 
-- [Microsoft.EntityFrameworkCore.Design (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/2.1.1)
-- [Microsoft.EntityFrameworkCore.Tools (2.1.1)](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools/2.1.1)
-- [System.IdentityModel.Tokens.Jwt (5.4.0)](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt/)
-- [Microsoft.AspNetCore.Authentication.JwtBearer (2.2.0)](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer/2.2.0)
-- [Swashbuckle.AspNetCore (4.0.1)](https://www.nuget.org/packages/Swashbuckle.AspNetCore/4.0.1)
+```
+Give examples
+```
 
+### Installing
 
-###Preparando o Postman
-Para testar esta aplicação estaremos usando o Postman, as requisições já estão prontas, basta importá-las. Para fazer isso:
-1. 
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
 
 ```
 Give the example
-``` 
- 
- nd repeat
+```
+
+And repeat
 
 ```
 until finished
