@@ -33,6 +33,7 @@ namespace SPMedGroup.WebApi.Repositories
                 }
                 else
                 {
+
                     ctx.ProntuarioPaciente.Add(paciente);
                     ctx.SaveChanges();
                     return paciente;

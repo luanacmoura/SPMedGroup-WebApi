@@ -13,7 +13,6 @@ namespace SPMedGroup.WebApi.Domains
 
         public int Id { get; set; }
         [Required (ErrorMessage = "Insira o nome!", AllowEmptyStrings = false)]
-        [MinLength(3, ErrorMessage = "O nome deve conter pelo menos 3 caracteres!")]
         public string Nome { get; set; }
 
         public ICollection<Medicos> Medicos { get; set; }
