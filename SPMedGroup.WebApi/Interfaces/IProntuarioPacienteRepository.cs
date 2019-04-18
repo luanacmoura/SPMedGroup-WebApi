@@ -8,5 +8,8 @@ namespace SPMedGroup.WebApi.Interfaces
     interface IProntuarioPacienteRepository
     {
         ProntuarioPaciente Cadastrar(ProntuarioPaciente paciente);
+
+        List<ProntuarioPaciente> Listar();
+
     }
 }

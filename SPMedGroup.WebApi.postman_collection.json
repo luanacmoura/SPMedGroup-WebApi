@@ -502,6 +502,41 @@
 				"description": "Um usuário do tipo administrador pode listar todas as consultas."
 			},
 			"response": []
+		},
+		{
+			"name": "Listar Usuários",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTU5Mzk0NiwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.yd8TqHBDkTP35EqbsbNRgaQdfoOBImGsJCnmMom3PNU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/prontuariopaciente/listar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"prontuariopaciente",
+						"listar"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [

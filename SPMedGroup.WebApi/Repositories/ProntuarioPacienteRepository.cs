@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SPMedGroup.WebApi.Domains;
+using System.Linq;
 
 namespace SPMedGroup.WebApi.Repositories
 {
@@ -42,6 +43,14 @@ namespace SPMedGroup.WebApi.Repositories
 
             }
 
+        }
+
+        public List<ProntuarioPaciente> Listar()
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return ctx.ProntuarioPaciente.ToList();
+            }
         }
 
     }

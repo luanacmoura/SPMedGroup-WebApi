@@ -23,7 +23,7 @@ namespace SPMedGroup.WebApi.Controllers
         }
 
         [Authorize(Roles = "1")] //1 equivale a Administrador
-        [HttpPost("{Cadastrar}")]
+        [HttpPost("Cadastrar")]
         public IActionResult Post(Usuarios usuario)
         {
             try

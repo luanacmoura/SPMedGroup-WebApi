@@ -1,4 +1,5 @@
 ﻿using SPMedGroup.WebApi.Domains;
+using System.Collections.Generic;
 
 namespace SPMedGroup.WebApi.Interfaces
 {

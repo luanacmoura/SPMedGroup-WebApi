@@ -53,7 +53,7 @@ namespace SPMedGroup.WebApi.Controllers
                 prontuariopaciente.Nome = paciente.Nome;
                 prontuariopaciente.Rg = paciente.Rg;
                 prontuariopaciente.Cpf = paciente.Cpf;
-                prontuariopaciente.DataNasc = paciente.DataNasc;
+                prontuariopaciente.DataNasc = paciente.DataNasc.Date;
                 prontuariopaciente.Telefone = paciente.Telefone;
                 prontuariopaciente.IdEndereco = endereco.Id;
                 prontuariopaciente.IdUsuario = usuario.Id;
@@ -65,6 +65,20 @@ namespace SPMedGroup.WebApi.Controllers
             catch (Exception ex)
             {
                 return BadRequest("Algo deu errado :/");
+            }
+        }
+
+        [Authorize(Roles = "1")]//1 equivale a Administrador
+        [HttpGet("Listar")]
+        public IActionResult Listar()
+        {
+            try
+            {
+                return Ok(ProntuarioPacienteRepository.Listar());
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
             }
         }
     }

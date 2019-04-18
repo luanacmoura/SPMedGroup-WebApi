@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SPMedGroup.WebApi.Domains;
 using SPMedGroup.WebApi.Interfaces;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SPMedGroup.WebApi.Repositories
@@ -30,5 +31,6 @@ namespace SPMedGroup.WebApi.Repositories
                 ctx.SaveChanges();
             }
         }
+
     }
 }
