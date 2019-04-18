@@ -99,178 +99,6 @@
 			"response": []
 		},
 		{
-			"name": "Cadastrar Usuário",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMiIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImV4cCI6MTU1MjU2MjU2OCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.FISE7hKwoiYY8P97144lXz7QXbA9KmebvD8IDNNxLL0",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"Email\":\"segundoadmin@admin.com\",\n\t\"Senha\": \"teste\",\n\t\"IdTipoUsuarios\":\"1\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/usuario/cadastrar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"usuario",
-						"cadastrar"
-					]
-				},
-				"description": "Somente um usuário do tipo administrador pode cadastrar um usuário!"
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastrar Endereço do Médico",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjMyMDUsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.gkB26qQC8zXp9EffAkD1kN3_uQghmGtSlz1xiXbM114",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua dos testes, 530\",\n\t\"CEP\":\"53565377\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/enderecosmedicos/cadastrar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"enderecosmedicos",
-						"cadastrar"
-					]
-				},
-				"description": "Somente um usuário do tipo administrador pode cadastrar um endereço."
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastrar Endereço do Paciente",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjMyMDUsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.gkB26qQC8zXp9EffAkD1kN3_uQghmGtSlz1xiXbM114",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":55365567\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/enderecospacientes/cadastrar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"enderecospacientes",
-						"cadastrar"
-					]
-				},
-				"description": "Somente um usuário do tipo administrador pode cadastrar um endereço!"
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastrar Médico",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1NjcyMzgsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.Avr7fU0gG3PkW_RDo_vq4BX1S6Ysdmmb1ssog5pUO5M",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"Crm\":\"56857\",\n\t\"Nome\":\"Ligia santos\",\n\t\"Telefone\":\"66567865\",\n\t\"IdAreaClinica\":\"4\",\n\t\"IdEndereco\":\"3\",\n\t\"IdUsuario\":\"4\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/medicos/cadastrar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"medicos",
-						"cadastrar"
-					]
-				},
-				"description": "Para cadastrar um médico, primeiro é necessário cadastrar um usuário! Somente um usuário do tipo administrador pode cadastrar um usuário e, posteriormente, um médico!"
-			},
-			"response": []
-		},
-		{
 			"name": "Cadastrar Paciente",
 			"request": {
 				"auth": {
@@ -278,7 +106,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJleHAiOjE1NTI1Njg5ODIsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.7K0UVIqxOXrHmgAOgvw3k1CxqWaCObWX1kyApXIOsdc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTUwOTE1MCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.4sMcw0Z6y5B7AhBE8T59Ku-PH4m7jq9n8HGfmXyVafE",
 							"type": "string"
 						}
 					]
@@ -294,7 +122,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"Nome\": \"Testedenovo\",\n\t\"Rg\":\"567876338\",\n\t\"Cpf\":\"65472248787\",\n\t\"DataNasc\":\"1967/03/02\",\n\t\"Telefone\":\"75678748\",\n\t\"IdEndereco\":\"7\",\n\t\"IdUsuario\":\"7\"\n}"
+					"raw": "{\n\t\"Email\":\"testinagaing@viewmodel.com\",\n\t\"Senha\":\"123456\",\n\t\"IdTipoUsuarios\":3,\n\t\"Nome\": \"Testedenovo\",\n\t\"Rg\":\"567836348\",\n\t\"Cpf\":\"65422218787\",\n\t\"DataNasc\":\"1967/03/02\",\n\t\"Telefone\":\"75278748\",\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":\"55365367\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:5000/api/prontuariopaciente/cadastrar",
@@ -310,6 +138,48 @@
 					]
 				},
 				"description": "Para cadastrar um paciente, primeiro é necessário cadastrar um usuário! Somente um usuário do tipo administrador pode cadastrar um usuário e, posteriormente, um paciente!"
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Médico",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTUwOTE1MCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.4sMcw0Z6y5B7AhBE8T59Ku-PH4m7jq9n8HGfmXyVafE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Email\":\"testing@viewmodelmedico.com\",\n\t\"Senha\":\"123456\",\n\t\"IdTipoUsuarios\":2,\n\t\"Crm\":\"56557\",\n\t\"Nome\":\"Twste santos\",\n\t\"Telefone\":\"36567365\",\n\t\"IdAreaClinica\":4,\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":\"55365367\"\n\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/medicos/cadastrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"medicos",
+						"cadastrar"
+					]
+				}
 			},
 			"response": []
 		},
