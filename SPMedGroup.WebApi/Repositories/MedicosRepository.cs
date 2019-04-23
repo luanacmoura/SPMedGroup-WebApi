@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using SPMedGroup.WebApi.Domains;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace SPMedGroup.WebApi.Repositories
 {
@@ -33,5 +35,7 @@ namespace SPMedGroup.WebApi.Repositories
                 }
             }
         }
+
+        
     }
 }

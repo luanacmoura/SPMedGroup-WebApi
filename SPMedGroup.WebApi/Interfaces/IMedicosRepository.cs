@@ -8,5 +8,7 @@ namespace SPMedGroup.WebApi.Interfaces
     interface IMedicosRepository
     {
         Medicos Cadastrar(Medicos medico);
+
+
     }
 }

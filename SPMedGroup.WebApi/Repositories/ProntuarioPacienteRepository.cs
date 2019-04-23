@@ -53,5 +53,15 @@ namespace SPMedGroup.WebApi.Repositories
             }
         }
 
+        public int BuscarIdUsuario(int IdProntuarioPaciente)
+        {
+            using(SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                ProntuarioPaciente Paciente = new ProntuarioPaciente();
+                Paciente = ctx.ProntuarioPaciente.FirstOrDefault(x => x.Id == IdProntuarioPaciente);
+                return Paciente.IdUsuario;
+            }
+        }
+
     }
 }

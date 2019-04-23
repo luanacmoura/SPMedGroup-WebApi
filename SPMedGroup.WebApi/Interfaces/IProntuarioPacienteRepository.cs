@@ -11,5 +11,7 @@ namespace SPMedGroup.WebApi.Interfaces
 
         List<ProntuarioPaciente> Listar();
 
+        int BuscarIdUsuario(int IdProntuarioPaciente);
+
     }
 }

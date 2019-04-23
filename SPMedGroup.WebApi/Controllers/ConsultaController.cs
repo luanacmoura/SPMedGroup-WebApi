@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SPMedGroup.WebApi.Domains;
 using SPMedGroup.WebApi.Interfaces;
 using SPMedGroup.WebApi.Repositories;
+using SPMedGroup.WebApi.ViewModels;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -23,10 +24,18 @@ namespace SPMedGroup.WebApi.Controllers
 
         [Authorize(Roles = "1")] //Somente o administrador pode cadastrar uma consulta
         [HttpPost("Cadastrar")]
-        public IActionResult CadastrarConsulta(Consulta consulta)
+        public IActionResult CadastrarConsulta(ConsultaViewModel consultaV)
         {
             try
             {
+                Consulta consulta = new Consulta();
+                ProntuarioPacienteRepository prontuario = new ProntuarioPacienteRepository();
+
+                consulta.IdProntuarioPaciente = consultaV.IdProntuarioPaciente;
+                consulta.IdUsuarioMedico = consultaV.IdUsuarioMedico;
+                consulta.DataConsulta = consultaV.DataConsulta;
+                consulta.IdUsuarioPaciente = prontuario.BuscarIdUsuario(consultaV.IdProntuarioPaciente);
+
                 ConsultaRepository.Cadastrar(consulta);
                 return Ok("Consulta cadastrada com sucesso!");
             }

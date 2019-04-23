@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SPMedGroup.WebApi.Domains;
 using SPMedGroup.WebApi.Interfaces;
 using SPMedGroup.WebApi.Repositories;
 using SPMedGroup.WebApi.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SPMedGroup.WebApi.Controllers
@@ -67,6 +69,23 @@ namespace SPMedGroup.WebApi.Controllers
             catch (Exception ex)
             {
                 return BadRequest("Algo deu errado :/");
+            }
+        }
+
+        [Authorize(Roles = "1")]//1 equivale a Administrador
+        [HttpGet("Listar")]
+        public IActionResult Listar()
+        {
+            try
+            {
+                using (SpMedGroupContext ctx = new SpMedGroupContext())
+                {
+                    return Ok(ctx.Medicos.Include(x => x.IdAreaClinicaNavigation).ToList());
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest();
             }
         }
     }
