@@ -5,6 +5,7 @@ using SPMedGroup.WebApi.Interfaces;
 using SPMedGroup.WebApi.Repositories;
 using SPMedGroup.WebApi.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 
@@ -47,14 +48,19 @@ namespace SPMedGroup.WebApi.Controllers
 
         [Authorize(Roles = "2")] //O médico pode editar a consulta pra adicionar uma descrição, e qnd isso acontecer o status da consulta vai pra realizada!
         [HttpPut("Editar")]
-        public IActionResult EditarConsulta(Consulta consulta)
+        public IActionResult EditarConsulta(EditarConsultaViewModel infoconsulta)
         {
             try
             {
-                if (ConsultaRepository.BuscarPorId(consulta.Id)==null)
+                if (ConsultaRepository.BuscarPorId(infoconsulta.IdConsulta)==null)
                 {
                     return NotFound("Não é possível editar uma consulta não existente!");
                 }
+
+                Consulta consulta = new Consulta();
+                consulta = ConsultaRepository.BuscarPorId(infoconsulta.IdConsulta);
+                consulta.Descricao = infoconsulta.Descricao;
+                consulta.StatusConsulta = "Realizada";
 
                 ConsultaRepository.Editar(consulta);
                 return Ok("Consulta editada com sucesso!");
@@ -106,7 +112,8 @@ namespace SPMedGroup.WebApi.Controllers
             try
             {
                 int usuarioid = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
-                return Ok(ConsultaRepository.ListardoMedico(usuarioid));
+                List<Consulta> listaConsultas = ConsultaRepository.ListardoMedico(usuarioid);
+                return Ok(listaConsultas);
             }
             catch (Exception ex)
             {

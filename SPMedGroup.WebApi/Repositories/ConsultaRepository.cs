@@ -47,11 +47,6 @@ namespace SPMedGroup.WebApi.Repositories
 
         public void Editar(Consulta consulta)
         {
-            consulta.DataConsulta = BuscarPorId(consulta.Id).DataConsulta;
-            consulta.IdProntuarioPaciente = BuscarPorId(consulta.Id).IdProntuarioPaciente;
-            consulta.IdUsuarioMedico = BuscarPorId(consulta.Id).IdUsuarioMedico;
-            consulta.IdUsuarioPaciente = BuscarPorId(consulta.Id).IdUsuarioPaciente;
-            consulta.StatusConsulta = "Realizada";
 
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
@@ -67,22 +62,8 @@ namespace SPMedGroup.WebApi.Repositories
 
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                int contador = ctx.Consulta.Count();
-                int i = 1;
 
-                while (i <= contador)
-                {
-                    Consulta consulta = new Consulta();
-                    consulta = ctx.Consulta.Find(i);
-                    if (consulta != null)
-                    {
-                        if (consulta.IdUsuarioMedico == usuarioid)
-                        {
-                            listadomedico.Add(consulta);
-                        }
-                    }
-                    i++;
-                }
+                listadomedico = ctx.Consulta.Where(consulta => consulta.IdUsuarioMedico == usuarioid).ToList();
 
                 if (listadomedico.Count > 0)
                 {
