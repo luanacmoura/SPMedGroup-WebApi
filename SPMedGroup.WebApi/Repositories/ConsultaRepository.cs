@@ -6,6 +6,7 @@ using SPMedGroup.WebApi.Domains;
 using System.Linq;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace SPMedGroup.WebApi.Repositories
 {
@@ -80,22 +81,7 @@ namespace SPMedGroup.WebApi.Repositories
 
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                int contador = ctx.Consulta.Count();
-                int i = 1;
-
-                while (i <= contador)
-                {
-                    Consulta consulta = new Consulta();
-                    consulta = ctx.Consulta.Find(i);
-                    if (consulta != null)
-                    {
-                        if (consulta.IdUsuarioPaciente == usuarioid)
-                        {
-                            listadopaciente.Add(consulta);
-                        }
-                    }
-                    i++;
-                }
+                listadopaciente = ctx.Consulta.Where(consulta => consulta.IdUsuarioPaciente == usuarioid).ToList();
 
                 if (listadopaciente.Count > 0)
                 {
