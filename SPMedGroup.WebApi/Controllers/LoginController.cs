@@ -42,13 +42,36 @@ namespace SPMedGroup.WebApi.Controllers
                 //Se foi encontrado...
                 else
                 {
+                    string nome;
+                    using (SpMedGroupContext ctx = new SpMedGroupContext())
+                    {
+                        Medicos medico = new Medicos();
+                        ProntuarioPaciente paciente = new ProntuarioPaciente();
+
+                        if (ctx.Medicos.FirstOrDefault(x => x.IdUsuario == usuario.Id) != null)
+                        {
+                            medico = ctx.Medicos.FirstOrDefault(x => x.IdUsuario == usuario.Id);
+                            nome = medico.Nome;
+                        }
+                        else if (ctx.ProntuarioPaciente.FirstOrDefault(x => x.IdUsuario == usuario.Id) != null)
+                        {
+                            paciente = ctx.ProntuarioPaciente.FirstOrDefault(x => x.IdUsuario == usuario.Id);
+                            nome = paciente.Nome;
+                        }
+                        else
+                        {
+                            nome = "Administrador";
+                        }
+
+                    }
                     //Estabelecendo quais dados estarão no payload para serem acessados 
                     var claims = new[]
                     {
                         new Claim(JwtRegisteredClaimNames.Jti, usuario.Id.ToString()),
                         new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
                         new Claim(ClaimTypes.Role, usuario.IdTipoUsuarios.ToString()),
-                        new Claim("Role", usuario.IdTipoUsuarios.ToString())
+                        new Claim("Role", usuario.IdTipoUsuarios.ToString()),
+                        new Claim("Nome", nome)
                     };
                                
 
