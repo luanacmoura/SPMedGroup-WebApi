@@ -64,7 +64,7 @@ namespace SPMedGroup.WebApi.Repositories
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
 
-                listadomedico = ctx.Consulta.Where(consulta => consulta.IdUsuarioMedico == usuarioid).ToList();
+                listadomedico = ctx.Consulta.Where(consulta => consulta.IdUsuarioMedico == usuarioid).Include(x => x.IdProntuarioPacienteNavigation).Include(x => x.IdUsuarioMedicoNavigation).Include(x => x.IdUsuarioPacienteNavigation).ToList();
 
                 if (listadomedico.Count > 0)
                 {
