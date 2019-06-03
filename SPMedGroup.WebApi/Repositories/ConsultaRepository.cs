@@ -81,7 +81,7 @@ namespace SPMedGroup.WebApi.Repositories
 
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                listadopaciente = ctx.Consulta.Where(consulta => consulta.IdUsuarioPaciente == usuarioid).ToList();
+                listadopaciente = ctx.Consulta.Where(consulta => consulta.IdUsuarioPaciente == usuarioid).Include(x => x.IdProntuarioPacienteNavigation).Include(x => x.IdUsuarioMedicoNavigation).Include(x => x.IdUsuarioPacienteNavigation).ToList();
 
                 if (listadopaciente.Count > 0)
                 {
@@ -95,7 +95,7 @@ namespace SPMedGroup.WebApi.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return (ctx.Consulta.ToList());
+                return (ctx.Consulta.Include(x => x.IdProntuarioPacienteNavigation).Include(x => x.IdUsuarioMedicoNavigation).Include(x => x.IdUsuarioPacienteNavigation).ToList());
             }
         }
     }
