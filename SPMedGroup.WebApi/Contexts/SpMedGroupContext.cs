@@ -30,7 +30,8 @@ namespace SPMedGroup.WebApi.Domains
             if (!optionsBuilder.IsConfigured)
             {
 //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=.\\SqlExpress; Initial Catalog= SPMedGroup;  User Id = sa; Pwd = 132");
+                optionsBuilder.UseSqlServer("Server=tcp:spmedgroupserver.database.windows.net,1433;Initial Catalog=SPMedGroup;Persist Security Info=False;User ID=luana;Password=abc-5565;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
             }
         }
 

@@ -40,3 +40,4 @@ C:\Users\46863229870\Desktop\teste\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Debug
 C:\Users\46863229870\Desktop\teste\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Debug\netcoreapp2.1\SPMedGroup.WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\46863229870\Desktop\teste\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Debug\netcoreapp2.1\SPMedGroup.WebApi.dll
 C:\Users\46863229870\Desktop\teste\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Debug\netcoreapp2.1\SPMedGroup.WebApi.pdb
+C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs

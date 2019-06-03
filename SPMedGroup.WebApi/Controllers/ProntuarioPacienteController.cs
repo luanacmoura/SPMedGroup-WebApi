@@ -26,6 +26,11 @@ namespace SPMedGroup.WebApi.Controllers
         {
             try
             {
+                if (paciente.DataNasc.Year >= DateTime.Now.Year)
+                {
+                    return BadRequest("Insira uma data de nascimento válida");
+                }
+
                 UsuarioRepository usuarioRepository = new UsuarioRepository();
                 EnderecosPacientesRepository enderecoPacienteRepository = new EnderecosPacientesRepository();
                 ProntuarioPacienteRepository prontuarioPacienteRepository = new ProntuarioPacienteRepository();
