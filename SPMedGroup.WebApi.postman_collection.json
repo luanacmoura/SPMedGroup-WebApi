@@ -2,187 +2,10 @@
 	"info": {
 		"_postman_id": "c5294c42-a30f-4159-962e-3d43078b35eb",
 		"name": "SPMedGroup.WebApi",
+		"description": "Requests para teste de funcionamento da api.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Login como Administrador",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"email\":\"segundoadmin@admin.com\",\n\t\"senha\":\"teste\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login como Médico",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"email\":\"helena.souza@spmedicalgroup.com.br\",\n\t\"senha\":\"123456\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Login como Paciente",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"email\":\"ligia@gmail.com\",\n\t\"senha\":\"123456\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastrar Paciente",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTUwOTE1MCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.4sMcw0Z6y5B7AhBE8T59Ku-PH4m7jq9n8HGfmXyVafE",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"Email\":\"testinagaing@viewmodel.com\",\n\t\"Senha\":\"123456\",\n\t\"IdTipoUsuarios\":3,\n\t\"Nome\": \"Testedenovo\",\n\t\"Rg\":\"567836348\",\n\t\"Cpf\":\"65422218787\",\n\t\"DataNasc\":\"1967/03/02\",\n\t\"Telefone\":\"75278748\",\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":\"55365367\"\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/prontuariopaciente/cadastrar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"prontuariopaciente",
-						"cadastrar"
-					]
-				},
-				"description": "Para cadastrar um paciente, primeiro é necessário cadastrar um usuário! Somente um usuário do tipo administrador pode cadastrar um usuário e, posteriormente, um paciente!"
-			},
-			"response": []
-		},
-		{
-			"name": "Cadastrar Médico",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTUwOTE1MCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.4sMcw0Z6y5B7AhBE8T59Ku-PH4m7jq9n8HGfmXyVafE",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"Email\":\"testing@viewmodelmedico.com\",\n\t\"Senha\":\"123456\",\n\t\"IdTipoUsuarios\":2,\n\t\"Crm\":\"56557\",\n\t\"Nome\":\"Twste santos\",\n\t\"Telefone\":\"36567365\",\n\t\"IdAreaClinica\":4,\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":\"55365367\"\n\n\t\n}"
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/medicos/cadastrar",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"medicos",
-						"cadastrar"
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "Cadastrar Área Clínica",
 			"request": {
@@ -210,12 +33,13 @@
 					"raw": "{\n\t\"Nome\":\"Psiquiatria Asiatica\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/areaclinica/cadastrar",
-					"protocol": "http",
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/areaclinica/cadastrar",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
 					],
-					"port": "5000",
 					"path": [
 						"api",
 						"areaclinica",
@@ -253,12 +77,13 @@
 					"raw": "{\n\t\"Cnpj\": \"4545456543456\",\n\t\"Nome\": \"Clínica Antonieta\",\n\t\"RazaoSocial\":\"SP MedClass\",\n\t\"Endereco\":\"Rua das margaridas, 359 - Mooca, São Paulo SP\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/clinica/cadastrar",
-					"protocol": "http",
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/clinica/cadastrar",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
 					],
-					"port": "5000",
 					"path": [
 						"api",
 						"clinica",
@@ -313,19 +138,19 @@
 			"response": []
 		},
 		{
-			"name": "Editar Consulta",
+			"name": "Cadastrar Médico",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzIiwiZW1haWwiOiJoZWxlbmEuc291emFAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsImV4cCI6MTU1MjU2MzIzMSwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.gR8YlIFIjjU1Eyv3YXqhiDTFJl8ZNzYuLjg9WfBdae4",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTUwOTE1MCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.4sMcw0Z6y5B7AhBE8T59Ku-PH4m7jq9n8HGfmXyVafE",
 							"type": "string"
 						}
 					]
 				},
-				"method": "PUT",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -336,22 +161,66 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"id\":10,\n\t\"Descricao\":\"Testando token\"\n}"
+					"raw": "{\n\t\"Email\":\"testing@viewmodelmedico.com\",\n\t\"Senha\":\"123456\",\n\t\"IdTipoUsuarios\":2,\n\t\"Crm\":\"56557\",\n\t\"Nome\":\"Twste santos\",\n\t\"Telefone\":\"36567365\",\n\t\"IdAreaClinica\":4,\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":\"55365367\"\n\n\t\n}"
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/consulta/editar",
-					"protocol": "http",
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/medicos/cadastrar",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
 					],
-					"port": "5000",
 					"path": [
 						"api",
-						"consulta",
-						"editar"
+						"medicos",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Paciente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTUwOTE1MCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.4sMcw0Z6y5B7AhBE8T59Ku-PH4m7jq9n8HGfmXyVafE",
+							"type": "string"
+						}
 					]
 				},
-				"description": "Um usuário do tipo médico pode editar a consulta, acrescentando uma descrição."
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Email\":\"testinagaing@viewmodel.com\",\n\t\"Senha\":\"123456\",\n\t\"IdTipoUsuarios\":3,\n\t\"Nome\": \"Testedenovo\",\n\t\"Rg\":\"567836348\",\n\t\"Cpf\":\"65422218787\",\n\t\"DataNasc\":\"1967/03/02\",\n\t\"Telefone\":\"75278748\",\n\t\"Estado\":\"SP\",\n\t\"Cidade\":\"São Paulo\",\n\t\"Bairro\":\"Mooca\",\n\t\"Logradouro\":\"Casa\",\n\t\"Endereco\":\"Rua das flores, 530\",\n\t\"CEP\":\"55365367\"\n}"
+				},
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/prontuariopaciente/cadastrar",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"prontuariopaciente",
+						"cadastrar"
+					]
+				},
+				"description": "Para cadastrar um paciente, primeiro é necessário cadastrar um usuário! Somente um usuário do tipo administrador pode cadastrar um usuário e, posteriormente, um paciente!"
 			},
 			"response": []
 		},
@@ -375,12 +244,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/consulta/cancelar/7",
-					"protocol": "http",
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/consulta/cancelar/7",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
 					],
-					"port": "5000",
 					"path": [
 						"api",
 						"consulta",
@@ -393,38 +263,89 @@
 			"response": []
 		},
 		{
-			"name": "Listar Consultas do Paciente",
+			"name": "Editar Consulta",
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0IiwiZW1haWwiOiJsaWdpYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwiZXhwIjoxNTUyNTY1NTgyLCJpc3MiOiJTUE1lZEdyb3VwLldlYkFwaSIsImF1ZCI6IlNQTWVkR3JvdXAuV2ViQXBpIn0.q9pzX2Wx9t3z4uBMTiEuXs3BruQk3fwtA-2aDAON9zU",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIzIiwiZW1haWwiOiJoZWxlbmEuc291emFAc3BtZWRpY2FsZ3JvdXAuY29tLmJyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsIlJvbGUiOiIyIiwiZXhwIjoxNTU2MTkzMjQ3LCJpc3MiOiJTUE1lZEdyb3VwLldlYkFwaSIsImF1ZCI6IlNQTWVkR3JvdXAuV2ViQXBpIn0.XtOpn9hvpolyHMKVmP6Xu5tBdC6N3-koyy28X5-y_9U",
 							"type": "string"
 						}
 					]
 				},
-				"method": "GET",
-				"header": [],
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\n\t\"idconsulta\":11,\n\t\"descricao\":\"Testando request\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/consulta/listardopaciente",
-					"protocol": "http",
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/consulta/editar",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
 					],
-					"port": "5000",
 					"path": [
 						"api",
 						"consulta",
-						"listardopaciente"
+						"editar"
 					]
 				},
-				"description": "É preciso estar logado com um paciente para executar esta função."
+				"description": "Um usuário do tipo médico pode editar a consulta, acrescentando uma descrição."
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Usuário",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsIlJvbGUiOiIxIiwiTm9tZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1NTk2NTQwNjAsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.uXru_fSOLkW_h-i7X84ulquuhAml8ND2c5go2c-wVmY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\":4,\n\t\"email\":\"ligiazinha@gmail.com\",\n\t\"senha\":\"123455\"\n}"
+				},
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/usuario/editar",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"usuario",
+						"editar"
+					]
+				}
 			},
 			"response": []
 		},
@@ -443,17 +364,14 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
-					"raw": "http://localhost:5000/api/consulta/listardomedico",
-					"protocol": "http",
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/consulta/listardomedico",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
 					],
-					"port": "5000",
 					"path": [
 						"api",
 						"consulta",
@@ -461,6 +379,103 @@
 					]
 				},
 				"description": "Lista todas as consultas do médico que está logado.\n(Somente um usuário do tipo médico pode efetuar essa ação.)"
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Consultas do Paciente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI0IiwiZW1haWwiOiJsaWdpYUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwiZXhwIjoxNTUyNTY1NTgyLCJpc3MiOiJTUE1lZEdyb3VwLldlYkFwaSIsImF1ZCI6IlNQTWVkR3JvdXAuV2ViQXBpIn0.q9pzX2Wx9t3z4uBMTiEuXs3BruQk3fwtA-2aDAON9zU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/consulta/listardopaciente",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"consulta",
+						"listardopaciente"
+					]
+				},
+				"description": "É preciso estar logado com um paciente para executar esta função."
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Médicos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NjAyNTI1NCwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.MntB2Isk65m9DRcSOLy1en6hKmnIB3vRjjk06f3bXcw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/medicos/listar",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"medicos",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Pacientes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTU5Mzk0NiwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.yd8TqHBDkTP35EqbsbNRgaQdfoOBImGsJCnmMom3PNU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/prontuariopaciente/listar",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"prontuariopaciente",
+						"listar"
+					]
+				}
 			},
 			"response": []
 		},
@@ -504,35 +519,96 @@
 			"response": []
 		},
 		{
-			"name": "Listar Usuários",
+			"name": "Login como Administrador",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxNSIsImVtYWlsIjoic2VndW5kb2FkbWluQGFkbWluLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IjEiLCJSb2xlIjoiMSIsImV4cCI6MTU1NTU5Mzk0NiwiaXNzIjoiU1BNZWRHcm91cC5XZWJBcGkiLCJhdWQiOiJTUE1lZEdyb3VwLldlYkFwaSJ9.yd8TqHBDkTP35EqbsbNRgaQdfoOBImGsJCnmMom3PNU",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [],
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\n\t\"email\":\"admin@admin.com\",\n\t\"senha\":\"123456\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/prontuariopaciente/listar",
-					"protocol": "http",
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/login",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
 					],
-					"port": "5000",
 					"path": [
 						"api",
-						"prontuariopaciente",
-						"listar"
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login como Médico",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"roberto.possarle@spmedicalgroup.com.br\",\n\t\"senha\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/login",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login como Paciente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"ligia@gmail.com\",\n\t\"senha\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/login",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"login"
 					]
 				}
 			},
