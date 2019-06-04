@@ -36,5 +36,25 @@ namespace SPMedGroup.WebApi.Controllers
                 return BadRequest("Alguma coisa deu errado!");
             }
         }
+
+        [Authorize(Roles = "1")]
+        [HttpPut("Editar")]
+        public IActionResult Editar(Usuarios usuario)
+        {
+            try
+            {
+                Usuarios usuarioantigo = new Usuarios();
+                usuarioantigo = UsuarioRepository.BuscarPorId(usuario.Id);
+
+                usuarioantigo.Email = usuario.Email;
+                usuarioantigo.Senha = usuario.Senha;
+                UsuarioRepository.Editar(usuarioantigo);
+                return Ok("Usuario editado com sucesso!");
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

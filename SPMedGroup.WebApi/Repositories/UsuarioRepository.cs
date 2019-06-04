@@ -23,6 +23,20 @@ namespace SPMedGroup.WebApi.Repositories
             }
         }
 
+        public Usuarios BuscarPorId (int id)
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                Usuarios usuario = new Usuarios();
+                usuario = ctx.Usuarios.FirstOrDefault(x => x.Id == id);
+                if (usuario != null)
+                {
+                    return usuario;
+                }
+                return null;
+            }
+        }
+
         public void Cadastrar(Usuarios usuario)
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
@@ -32,5 +46,14 @@ namespace SPMedGroup.WebApi.Repositories
             }
         }
 
+        public void Editar (Usuarios usuario) {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                ctx.Usuarios.Update(usuario);
+                ctx.SaveChanges();
+            }
+        }
     }
-}
+
+    }
+

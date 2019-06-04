@@ -7,6 +7,10 @@ namespace SPMedGroup.WebApi.Interfaces
     {
          Usuarios BuscarPorEmailSenha(string email, string senha);
 
+        Usuarios BuscarPorId(int id);
+
         void Cadastrar(Usuarios usuario);
+
+        void Editar(Usuarios usuario);
     }
 }
