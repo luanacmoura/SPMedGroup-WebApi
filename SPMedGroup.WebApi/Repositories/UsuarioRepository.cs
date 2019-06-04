@@ -58,7 +58,7 @@ namespace SPMedGroup.WebApi.Repositories
         {
             using (SpMedGroupContext ctx = new SpMedGroupContext())
             {
-                return ctx.Usuarios.ToList();
+                return ctx.Usuarios.Include(x => x.Medicos).Include(x => x.ProntuarioPaciente).ToList();
             }
         }
     }
