@@ -53,6 +53,14 @@ namespace SPMedGroup.WebApi.Repositories
                 ctx.SaveChanges();
             }
         }
+
+        public List<Usuarios> ListarUsuarios()
+        {
+            using (SpMedGroupContext ctx = new SpMedGroupContext())
+            {
+                return ctx.Usuarios.ToList();
+            }
+        }
     }
 
     }

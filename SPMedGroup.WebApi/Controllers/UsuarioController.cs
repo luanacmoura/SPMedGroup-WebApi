@@ -56,5 +56,19 @@ namespace SPMedGroup.WebApi.Controllers
                 return BadRequest();
             }
         }
+
+        [Authorize(Roles = "1")]
+        [HttpGet("ListarUsuarios")]
+        public IActionResult ListarUsuarios ()
+        {
+            try
+            {
+                return Ok(UsuarioRepository.ListarUsuarios());
+            }
+            catch
+            {
+                return BadRequest();
+            }
+        }
     }
 }

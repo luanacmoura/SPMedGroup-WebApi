@@ -12,5 +12,7 @@ namespace SPMedGroup.WebApi.Interfaces
         void Cadastrar(Usuarios usuario);
 
         void Editar(Usuarios usuario);
+
+        List<Usuarios> ListarUsuarios();
     }
 }

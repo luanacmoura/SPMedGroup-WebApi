@@ -519,6 +519,45 @@
 			"response": []
 		},
 		{
+			"name": "Listar Usuários",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIxMSIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsIlJvbGUiOiIxIiwiTm9tZSI6IkFkbWluaXN0cmFkb3IiLCJleHAiOjE1NTk2NTQwNjAsImlzcyI6IlNQTWVkR3JvdXAuV2ViQXBpIiwiYXVkIjoiU1BNZWRHcm91cC5XZWJBcGkifQ.uXru_fSOLkW_h-i7X84ulquuhAml8ND2c5go2c-wVmY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/usuario/listarusuarios",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"usuario",
+						"listarusuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Login como Administrador",
 			"request": {
 				"method": "POST",
