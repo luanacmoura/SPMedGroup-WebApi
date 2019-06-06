@@ -1,20 +1,18 @@
 # SPMedGroup.WebApi
 Api desenvolvida para fins didáticos para a empresa ficticia SP Medical Group, com abordagem Database First.
 
-## Getting Started
+## Começando
+Seguindo essas instruções, você terá uma cópia do projeto rodando na sua máquina com a finalidade de testá-lo.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+### Pré-requisitos
+Para rodar este projeto, você precisa ter o Visual Studio 2017 instalado na sua máquina, OU ter o pacote .net core 2.2 instalado.
+Onde baixar:
+- [Visual Studio 2017](https://visualstudio.microsoft.com/pt-br/vs/community/?rr=https%3A%2F%2Fwww.google.com%2F)
+- [Dotnet Core 2.2](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-windows-x86-binaries)
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
+### Instalando
+Para instalar o projeto, basta clicar...
 A step by step series of examples that tell you how to get a development env running
 
 Say what the step will be
