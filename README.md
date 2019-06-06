@@ -11,8 +11,11 @@ Onde baixar:
 - [Visual Studio 2017](https://visualstudio.microsoft.com/pt-br/vs/community/?rr=https%3A%2F%2Fwww.google.com%2F)
 - [Dotnet Core 2.2](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-windows-x86-binaries)
 
-### Instalando
-Para instalar o projeto, basta clicar...
+### Instalando e Rodando o Projeto
+Para instalar o projeto, basta clicar em download ou dar um git clone.
+Para rodar o projeto, no Visual Studio:
+- Clique 
+![alt text](https://drive.google.com/file/d/1YdErHF3vg7XKeG1cpeTae-npk385smES/view)
 A step by step series of examples that tell you how to get a development env running
 
 Say what the step will be
