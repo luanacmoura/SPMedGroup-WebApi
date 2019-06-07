@@ -7,9 +7,9 @@ C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\net
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.csproj.CoreCompileInputs.cache
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.RazorAssemblyInfo.cache
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.RazorAssemblyInfo.cs
-C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.AssemblyInfoInputs.cache
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.AssemblyInfo.cs
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.RazorTargetAssemblyInfo.cache
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.dll
 C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\SPMedGroup.WebApi.pdb
+C:\Users\46863229870\Desktop\SPMedGroup.WebApi\SPMedGroup.WebApi\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
