@@ -138,6 +138,39 @@
 			"response": []
 		},
 		{
+			"name": "Cadastrar Info Atendimento",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"latitude\": -23.5323804,\n\t\"longitude\": -46.6492957,\n\t\"IdAreaClinica\": 80000,\n\t\"IdadePaciente\": 45\n}"
+				},
+				"url": {
+					"raw": "https://spmedgroupwebapi.azurewebsites.net/api/infoatendimento/cadastrar",
+					"protocol": "https",
+					"host": [
+						"spmedgroupwebapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"infoatendimento",
+						"cadastrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Cadastrar Médico",
 			"request": {
 				"auth": {
