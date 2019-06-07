@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SPMedGroup.WebApi.Domains;
 using SPMedGroup.WebApi.Interfaces;
 using SPMedGroup.WebApi.Repositories;
@@ -17,6 +18,8 @@ namespace SPMedGroup.WebApi.Controllers
         {
             InfoAtendimentoRepository = new InfoAtendimentoRepository();
         }
+
+        [Authorize(Roles="1")]
         [HttpPost("Cadastrar")]
         public IActionResult Cadastrar(InfoAtendimento informacoes)
         {
