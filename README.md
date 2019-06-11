@@ -6,25 +6,31 @@ Seguindo essas instruções, você terá uma cópia do projeto rodando na sua m�
 
 
 ### Pré-requisitos
-Para rodar este projeto na sua máquina, você precisa ter o Visual Studio 2017 instalado na sua máquina, **OU** ter o pacote .net core 2.2 instalado.
+```diff
++ Caso deseje apenas testar o projeto, no momento, poderá fazê-lo utilizando somente o Postman em decorrência
++ do fato de que esta API está hospedada na Azure.
++ Se esse for o seu caso instale o Postman, e pule para o passo: "Testando com Postman".
+```
+Para rodar este projeto na sua máquina, você precisa ter o pacote Dotnet core 2.2 e o Postman instalado na sua máquina. Caso não queira utilizar o terminal de comando do windows, será necessário também ter o Visual Studio 2017.
 Onde baixar:
-- [Visual Studio 2017](https://visualstudio.microsoft.com/pt-br/vs/community/?rr=https%3A%2F%2Fwww.google.com%2F)
 - [Dotnet Core 2.2](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-windows-x86-binaries)
 - [Postman](https://www.getpostman.com/downloads/)
-
-```diff
-+ Caso deseje apenas testar o projeto, no momento, poderá fazê-lo utilizando somente o Postman!
-```
+- [Visual Studio 2017](https://visualstudio.microsoft.com/pt-br/vs/community/?rr=https%3A%2F%2Fwww.google.com%2F)
 
 ### Instalando e Rodando o Projeto
-Para instalar o projeto, basta clicar em download ou dar um git clone.
+Para instalar o projeto, basta clicar em download ou executar o seguinte comando:
+```
+git clone https://github.com/luanacmoura/SPMedGroup.WebApi.git
+```
 Para rodar o projeto, no Visual Studio:
 - Após abrir o projeto no programa, no canto superior esquerdo, encontre e clique na seguinte opção: 
 ![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/RodarVisualStudio.png)
-A step by step series of examples that tell you how to get a development env running
+Se o projeto foi executado corretamente, podemos ir para os testes.
 
-Say what the step will be
-
+Caso tenha escolhido não utilizar o Visual Studio, abra o cmd na seguinte pasta do projeto:
+![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/enterpasta.png)
+![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/abrir-cmd.png
+![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/open-cmd.png)
 ```
 Give the example
 ```
