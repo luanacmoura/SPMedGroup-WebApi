@@ -29,7 +29,7 @@ Se o projeto foi executado corretamente, podemos ir para os testes.
 
 Caso tenha escolhido não utilizar o Visual Studio, abra o cmd na seguinte pasta do projeto:
 ![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/enterpasta.png)
-![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/abrir-cmd.png
+![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/abrir-cmd.png)
 ![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/open-cmd.png)
 ```
 Give the example
