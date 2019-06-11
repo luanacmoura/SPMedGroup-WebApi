@@ -98,7 +98,7 @@ namespace SPMedGroup.WebApi.Controllers
                 }
             }
 
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Alguma coisa deu errado");
             }

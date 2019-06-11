@@ -31,7 +31,7 @@ namespace SPMedGroup.WebApi.Controllers
                 return Ok("Área Clínica cadastrada com sucesso!");
             }
 
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Algo deu errado!");
             }

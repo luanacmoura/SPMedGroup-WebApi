@@ -40,7 +40,7 @@ namespace SPMedGroup.WebApi.Controllers
                 ConsultaRepository.Cadastrar(consulta);
                 return Ok("Consulta cadastrada com sucesso!");
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Algo deu errado :/");
             }
@@ -65,7 +65,7 @@ namespace SPMedGroup.WebApi.Controllers
                 ConsultaRepository.Editar(consulta);
                 return Ok("Consulta editada com sucesso!");
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Algo deu errado :/");
             }
@@ -85,7 +85,7 @@ namespace SPMedGroup.WebApi.Controllers
                 ConsultaRepository.Cancelar(id);
                 return Ok("Consulta cancelada com sucesso!");
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Algo deu errado :/");
             }
@@ -99,7 +99,7 @@ namespace SPMedGroup.WebApi.Controllers
             {
                 return Ok(ConsultaRepository.ListarTodas());
             }
-            catch (Exception ex)
+            catch
             {
                 return BadRequest("Algo deu errado :/");
             }
@@ -115,7 +115,7 @@ namespace SPMedGroup.WebApi.Controllers
                 List<Consulta> listaConsultas = ConsultaRepository.ListardoMedico(usuarioid);
                 return Ok(listaConsultas);
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Algo deu errado :/");
             }
@@ -131,7 +131,7 @@ namespace SPMedGroup.WebApi.Controllers
 
                 return Ok(ConsultaRepository.ListardoPaciente(usuarioid));
             }
-            catch (Exception ex)
+            catch
             {
                 return BadRequest("Algo deu errado :/");
             }

@@ -15,7 +15,7 @@ Onde baixar:
 Para instalar o projeto, basta clicar em download ou dar um git clone.
 Para rodar o projeto, no Visual Studio:
 - Clique 
-![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/RodarVisualStudio.png?raw=true)
+![image](https://drive.google.com/file/d/1YdErHF3vg7XKeG1cpeTae-npk385smES/view?usp=sharing)
 A step by step series of examples that tell you how to get a development env running
 
 Say what the step will be

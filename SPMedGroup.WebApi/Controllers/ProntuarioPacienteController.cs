@@ -67,7 +67,7 @@ namespace SPMedGroup.WebApi.Controllers
 
                 return Ok("Paciente cadastrado com sucesso!");
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Algo deu errado :/");
             }
@@ -81,7 +81,7 @@ namespace SPMedGroup.WebApi.Controllers
             {
                 return Ok(ProntuarioPacienteRepository.Listar());
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest();
             }

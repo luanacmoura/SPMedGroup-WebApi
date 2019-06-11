@@ -28,7 +28,7 @@ namespace SPMedGroup.WebApi.Controllers
                 ClinicaRepository.Cadastrar(clinica);
                 return Ok("Clínica cadastrada com sucesso!");
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Alguma coisa deu errado :/");
             }

@@ -5,10 +5,7 @@ using SPMedGroup.WebApi.Domains;
 using SPMedGroup.WebApi.Interfaces;
 using SPMedGroup.WebApi.Repositories;
 using SPMedGroup.WebApi.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace SPMedGroup.WebApi.Controllers
 {
@@ -66,7 +63,7 @@ namespace SPMedGroup.WebApi.Controllers
 
                 return Ok("Médico cadastrado com sucesso!");
             }
-            catch (Exception ex)
+            catch
             {
                 return BadRequest("Algo deu errado :/");
             }
@@ -83,7 +80,7 @@ namespace SPMedGroup.WebApi.Controllers
                     return Ok(ctx.Medicos.Include(x => x.IdAreaClinicaNavigation).ToList());
                 }
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest();
             }

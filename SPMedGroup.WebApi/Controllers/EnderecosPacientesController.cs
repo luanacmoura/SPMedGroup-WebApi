@@ -30,7 +30,7 @@ namespace SPMedGroup.WebApi.Controllers
                 EnderecosPacientesRepository.Cadastrar(endereco);
                 return Ok("Endereço cadastrado!");
             }
-            catch (Exception ex)
+            catch 
             {
                 return BadRequest("Alguma coisa deu errado :/");
             }
