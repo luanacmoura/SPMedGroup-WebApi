@@ -6,16 +6,21 @@ Seguindo essas instruções, você terá uma cópia do projeto rodando na sua m�
 
 
 ### Pré-requisitos
-Para rodar este projeto, você precisa ter o Visual Studio 2017 instalado na sua máquina, OU ter o pacote .net core 2.2 instalado.
+Para rodar este projeto na sua máquina, você precisa ter o Visual Studio 2017 instalado na sua máquina, **OU** ter o pacote .net core 2.2 instalado.
 Onde baixar:
 - [Visual Studio 2017](https://visualstudio.microsoft.com/pt-br/vs/community/?rr=https%3A%2F%2Fwww.google.com%2F)
 - [Dotnet Core 2.2](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-2.2.300-windows-x86-binaries)
+- [Postman](https://www.getpostman.com/downloads/)
+
+```diff
++ Caso deseje apenas testar o projeto, no momento, poderá fazê-lo utilizando somente o Postman!
+```
 
 ### Instalando e Rodando o Projeto
 Para instalar o projeto, basta clicar em download ou dar um git clone.
 Para rodar o projeto, no Visual Studio:
-- Clique 
-![image](https://drive.google.com/file/d/1YdErHF3vg7XKeG1cpeTae-npk385smES/view?usp=sharing)
+- Após abrir o projeto no programa, no canto superior esquerdo, encontre e clique na seguinte opção: 
+![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/RodarVisualStudio.png)
 A step by step series of examples that tell you how to get a development env running
 
 Say what the step will be
