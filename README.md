@@ -35,7 +35,10 @@ dotnet run
 ```
 ## Testando com o Postman
 
-Antes de mais nada, importe o arquivo SPMedGroup.WebApi.postman_collection.json, para o Postman. 
+Se você optou por testar o projeto com a api hospedada na Azure, importe o arquivo SPMedGroup.WebApi - Azure.postman_collection.json, para o Postman. Do contrário, importe o arquivo SPMedGroup.WebApi.postman_collection.json.
+```diff
+- Atente-se a qual das duas coleções você está importando, do contrário, as requests não funcionarão!
+```
 
 ### Break down into end to end tests
 
