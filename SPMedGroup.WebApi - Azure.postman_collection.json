@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "373ec096-4ff2-4b87-97f2-99b1c8e57f25",
-		"name": "SPMedGroup.WebApi",
+		"_postman_id": "c5294c42-a30f-4159-962e-3d43078b35eb",
+		"name": "SPMedGroup.WebApi - Azure",
 		"description": "Requests para teste de funcionamento da api.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
