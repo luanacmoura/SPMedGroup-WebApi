@@ -22,8 +22,10 @@ Para instalar o projeto, basta clicar em download ou executar o seguinte comando
 ```
 git clone https://github.com/luanacmoura/SPMedGroup.WebApi.git
 ```
-Para rodar o projeto, no Visual Studio, abra o projeto no programa e no canto superior esquerdo, encontre e clique na seguinte opção: 
-![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/RodarVisualStudio.png)
+Para rodar o projeto, no Visual Studio, abra o projeto no programa e no canto superior esquerdo, encontre e clique na seguinte opção:
+
+![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/RodarVisualStudio.png) 
+
 Se o projeto for executado corretamente, podemos ir para os testes.
 
 Caso tenha escolhido não utilizar o Visual Studio, abra a pasta do projeto, abra a pasta SPMedGroup.WebApi, nessa pasta abra e digite o seguinte comando:
@@ -31,9 +33,9 @@ Caso tenha escolhido não utilizar o Visual Studio, abra a pasta do projeto, abr
 ```
 dotnet run
 ```
-## Running the tests
+## Testando com o Postman
 
-Explain how to run the automated tests for this system
+Antes de mais nada, importe o arquivo SPMedGroup.WebApi.postman_collection.json, para o Postman. 
 
 ### Break down into end to end tests
 
