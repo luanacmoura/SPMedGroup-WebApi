@@ -22,27 +22,15 @@ Para instalar o projeto, basta clicar em download ou executar o seguinte comando
 ```
 git clone https://github.com/luanacmoura/SPMedGroup.WebApi.git
 ```
-Para rodar o projeto, no Visual Studio:
-- Após abrir o projeto no programa, no canto superior esquerdo, encontre e clique na seguinte opção: 
+Para rodar o projeto, no Visual Studio, abra o projeto no programa e no canto superior esquerdo, encontre e clique na seguinte opção: 
 ![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/RodarVisualStudio.png)
-Se o projeto foi executado corretamente, podemos ir para os testes.
+Se o projeto for executado corretamente, podemos ir para os testes.
 
-Caso tenha escolhido não utilizar o Visual Studio, abra o cmd na seguinte pasta do projeto:
-![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/enterpasta.png)
-![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/abrir-cmd.png)
-![image](https://github.com/luanacmoura/SPMedGroup.WebApi/blob/master/readme-imgs/open-cmd.png)
-```
-Give the example
-```
-
-And repeat
+Caso tenha escolhido não utilizar o Visual Studio, abra a pasta do projeto, abra a pasta SPMedGroup.WebApi, nessa pasta abra e digite o seguinte comando:
 
 ```
-until finished
+dotnet run
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
-
 ## Running the tests
 
 Explain how to run the automated tests for this system
